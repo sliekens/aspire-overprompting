@@ -1,0 +1,25 @@
+{
+    "id": "aspire-cli",
+    "name": "Aspire CLI",
+    "version": "1.0.0",
+    "options": {
+        "quality": {
+            "type": "string",
+            "enum": [
+                "release",
+                "staging",
+                "dev"
+            ],
+            "default": "release",
+            "description": "Quality to download."
+        }
+    },
+    "mounts": [
+        {
+            "type": "volume",
+            "source": "aspire-cli-state",
+            "target": "/home/vscode/.aspire/"
+        }
+    ],
+    "onCreateCommand": "sudo chown -R vscode:vscode /home/vscode/.aspire/"
+}
